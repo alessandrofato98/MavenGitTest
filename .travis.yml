@@ -1,12 +1,8 @@
-sudo: false
 language: java
-cache:
-  directories:
-  - "$HOME/.cache"
 
-before_install:
+jdk:
+  - openjdk8
 
-deploy:
-  provider: script
-  script: "mvn -B -V deploy"
-  skip_cleanup: true
+script:
+  - cd MavenGitTestPrj
+  - mvn clean compile
